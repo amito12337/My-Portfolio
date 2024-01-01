@@ -61,12 +61,14 @@ function Home() {
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
           />
           <Plane
             position={planePosition}
             scale={planeScale}
             isRotating={isRotating}
-            rotation={[0,20,0]}
+            rotation={[0, 20, 0]}
           />
         </Suspense>
       </Canvas>
