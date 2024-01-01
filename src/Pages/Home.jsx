@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import Loader from "../components/Loader";
 import Island from "../models/Island";
 import Sky from "../models/Sky";
-import Bird from "../models/Bird";
 {
   /* <div className="absolute-top-28 left-0 right-0 z-10 flex items-center justify-center">
   PouPUP
@@ -31,15 +30,13 @@ function Home() {
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5} />
-          <hemisphereLight skycolor="#~b1e1ff" groundColor={"#000"} intensity={1}/>
-          <Bird />
+          <hemisphereLight skycolor="#b1e1ff" groundColor={"#000"} intensity={1}/>
           <Sky />
           <Island
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
           />
-          <Plane />
         </Suspense>
       </Canvas>
     </section>
