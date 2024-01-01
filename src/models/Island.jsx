@@ -16,7 +16,7 @@ const Island = ({isRotating,setIsRotating,...props }) => {
   const handlePointerDown = (e) => {
     e.stopPropagation();
     e.preventDefault();
-
+    setIsRotating(true)
     // Calculate the clientX based on whether it's a touch event or a mouse event
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
@@ -31,7 +31,6 @@ const Island = ({isRotating,setIsRotating,...props }) => {
   const handlePointerMove = (e) => {
     e.stopPropagation();
     e.preventDefault();
-
     if(isRotating) {
       
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
