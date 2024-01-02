@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useFrame } from "@react-three/fiber"; // Add this import
+import { useFrame } from "@react-three/fiber"; 
 import skyScene from "../assets/3d/sky.glb";
 import { useGLTF } from "@react-three/drei";
 
@@ -9,7 +9,7 @@ function Sky({ isRotating }) {
 
   useFrame((_, delta) => {
     if (isRotating) {
-      skyRef.current.rotation.y += 0.25 * delta;
+      skyRef.current.rotation.y += 0.15 * delta;
     }
   });
 
