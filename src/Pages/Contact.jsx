@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import Fox from "../models/Fox";
 import Loader from "../components/Loader";
+import useAlert from "../hooks/useAlert";
+import Alert from "../components/Alert";
 
 function Contact() {
   const formRef = useRef(null);
@@ -13,6 +15,8 @@ function Contact() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
+
+  const {alert,showAlert,hideAlert} = useAlert()
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -38,8 +42,14 @@ function Contact() {
         // TODO:show succes message
         // TODO:hide an alert message
 
+        showAlert({
+          show: true,
+          text: "Message Send Succesfly!",
+          type: "succes",
+        });
         setTimeout(()=>{
           setCurrentAnimation("idle")
+          hideAlert()
           setForm({
             name: "",
             email: "",
@@ -52,6 +62,11 @@ function Contact() {
         setCurrentAnimation('idle')
         console.log(error);
         // TODO:show error message
+
+      });showAlert({
+        show: true,
+        text: "I didn't receive your message",
+        type: "danger",
       });
   };
   const handleFocus = () => {
@@ -62,6 +77,7 @@ function Contact() {
   };
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
+      {alert.show && <Alert type={alert.type} text={alert.text} />}
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
         <form
@@ -131,7 +147,7 @@ function Contact() {
           <ambientLight intensity={0.7} position={[0, 0, 1]} />
           <Suspense fallback={<Loader />}>
             <Fox
-            currentAnimation={currentAnimation}
+              currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.6, -0.6, 0]}
               scale={[0.5, 0.5, 0.5]}
