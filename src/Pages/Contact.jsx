@@ -39,8 +39,6 @@ function Contact() {
       )
       .then(() => {
         setIsLoading(false);
-        // TODO:show succes message
-        // TODO:hide an alert message
 
         showAlert({
           show: true,
@@ -55,18 +53,17 @@ function Contact() {
             email: "",
             message: "",
           });
-        },1000)
+        },2000)
       })
       .catch((error) => {
         setIsLoading(false);
         setCurrentAnimation('idle')
         console.log(error);
-        // TODO:show error message
-
-      });showAlert({
-        show: true,
-        text: "I didn't receive your message",
-        type: "danger",
+        showAlert({
+          show: true,
+          text: "I didn't receive your message 😢",
+          type: "danger",
+        });
       });
   };
   const handleFocus = () => {
@@ -150,7 +147,7 @@ function Contact() {
               currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.6, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
+              scale={[0.4, 0.4, 0.4]}
             />
           </Suspense>
         </Canvas>
