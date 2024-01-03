@@ -37,7 +37,7 @@ const renderContent = {
   4: (
     <div className="sm:text-sm sm:leading-sung text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
       <p className="font-medium sm:text-xl text-center my-3">
-        Nedd a Project done or looking for a dev? I'm just a few keystores away
+        Nedd a Project done or looking for a developer? I'm just a few keystores away
       </p>
       <Link to={"/contact"} className="neo-brutalism-white neo-btn">
         Let's talk
