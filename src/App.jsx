@@ -7,7 +7,7 @@ import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
 function App() {
   return (
-    <main className="bg-slate-300/20">
+    <main className="bg-slate-300/20 min-h-[100vh] max-h-[100%]">
         <Router>
             <Navbar />
             <Routes>
