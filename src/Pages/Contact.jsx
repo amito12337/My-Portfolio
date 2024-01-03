@@ -21,17 +21,17 @@ function Contact() {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID, // "template_mdcvwhr",
         {
           from_name: form.name,
-          to_name: "Adrian",
+          to_name: "Abdessamad",
           from_email: form.email,
           to_email: "aamaitit@gmil.com",
-          message: form.message,
+          message:  form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLICK_KEY // "sr5y7Vs7KBwPakt5L"
       )
       .then(() => {
         setIsLoading(false);
         // TODO:show succes message
-        // TODO:hide an alert message
+        // TODO:hide an alert message 
       })
       .catch((error) => {
         setIsLoading(false);
