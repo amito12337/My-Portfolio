@@ -15,7 +15,7 @@
   height: 5.4em;
   border: 0.4em solid rgb(84, 84, 84);
   border-left-color: #a23ffc;
-  border-radius: 45%;
+  border-radius: 50%;
   animation: spin 0.7s linear infinite;
 }
 
