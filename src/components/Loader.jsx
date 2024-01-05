@@ -4,22 +4,10 @@ import React from "react";
 function Loader() {
   return (
     <Html>
-      <div class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="cell">
+        <div class="card">
+          <span class="flower-loader">Loading…</span>
+        </div>
       </div>
     </Html>
   );
